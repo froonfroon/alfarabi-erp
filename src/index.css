@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+/* Global Responsive Base Typography Scale */
+html {
+  font-size: 17px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 20.5px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #060813;
+  color: #f1f5f9;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Proportional Typography Scale Enhancement across the entire app */
+[class*="text-[10px]"] {
+  font-size: 0.8rem !important; /* ~14.5px - clear and legible */
+  line-height: 1.45 !important;
+}
+
+[class*="text-[11px]"] {
+  font-size: 0.86rem !important; /* ~15.5px */
+  line-height: 1.5 !important;
+}
+
+.text-xs {
+  font-size: 0.925rem !important; /* ~16.5px - no more eye-strain */
+  line-height: 1.5 !important;
+}
+
+.text-sm {
+  font-size: 1.05rem !important; /* ~19px */
+  line-height: 1.55 !important;
+}
+
+.text-base {
+  font-size: 1.18rem !important; /* ~21px */
+  line-height: 1.65 !important;
+}
+
+.text-lg {
+  font-size: 1.35rem !important; /* ~24px */
+  line-height: 1.6 !important;
+}
+
+.text-xl {
+  font-size: 1.55rem !important; /* ~28px */
+  line-height: 1.5 !important;
+}
+
+.text-2xl {
+  font-size: 1.85rem !important; /* ~33px */
+  line-height: 1.4 !important;
+}
+
+.text-3xl {
+  font-size: 2.25rem !important; /* ~40px */
+  line-height: 1.35 !important;
+}
+
+.text-4xl {
+  font-size: 2.85rem !important; /* ~51px */
+  line-height: 1.25 !important;
+}
+
+.text-5xl {
+  font-size: 3.5rem !important; /* ~63px */
+  line-height: 1.2 !important;
+}
+
+/* Arabic & English Typography Protection: Never clip or overlap */
+[dir="rtl"] {
+  letter-spacing: 0 !important;
+  word-spacing: normal !important;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+  font-weight: 800;
+}
+
+[dir="rtl"] p {
+  line-height: 1.75;
+}
+
+[dir="ltr"] h1,
+[dir="ltr"] h2,
+[dir="ltr"] h3,
+[dir="ltr"] h4 {
+  line-height: 1.35 !important;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* Ensure background-clip text never clips Arabic ascenders/descenders */
+.bg-clip-text {
+  display: inline-block;
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(13, 19, 38, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-glow {
+  background: rgba(16, 24, 48, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.25), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 12px 36px 0 rgba(56, 189, 248, 0.18), 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* Glowing text and lines */
+.text-glow-cyan {
+  text-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+}
+.text-glow-lime {
+  text-shadow: 0 0 18px rgba(163, 230, 53, 0.6);
+}
+.text-glow-rose {
+  text-shadow: 0 0 18px rgba(244, 63, 94, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080a14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* 3D Canvas Container */
+.canvas-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Keynote 16:9 Presentation Viewport */
+.presentation-viewport {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 1720px;
+  max-height: 960px;
+}
+
+/* Print / PDF Styles */
+@media print {
+  body {
+    background: #090d16 !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .slide-container {
+    page-break-after: always;
+    break-after: page;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+  }
+}
